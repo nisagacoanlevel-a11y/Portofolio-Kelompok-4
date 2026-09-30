@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portofolio Kelompok 4 Mahasiswa Agribisnis">
+<title>Kelompok 4 Agribisnis | Portofolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--red:#e11d2e;--red2:#ff4d5a;--black:#0a0a0a;--dark:#141414;--gray:#262626;--gray2:#9ca3af;--white:#f5f5f5}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',Arial,sans-serif;background:var(--black);color:var(--white);line-height:1.7;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+section{padding:90px 8%;position:relative}
+.title{font-size:2.2rem;font-weight:800;text-align:center;margin-bottom:10px}
+.title span{color:var(--red)}
+.sub{text-align:center;color:var(--gray2);max-width:620px;margin:0 auto 50px}
+.bar{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--red),var(--red2));z-index:200}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 8%;z-index:100;transition:.3s}
+nav.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(8px);padding:12px 8%;border-bottom:1px solid var(--gray)}
+.logo{font-weight:800;font-size:1.3rem}.logo span{color:var(--red)}
+.menu{display:flex;gap:28px;list-style:none}
+.menu a{font-size:.92rem;color:var(--gray2);transition:.3s;position:relative}
+.menu a::after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--red);transition:.3s}
+.menu a:hover,.menu a.active{color:#fff}
+.menu a:hover::after,.menu a.active::after{width:100%}
+.burger{display:none;background:none;border:0;color:#fff;font-size:1.8rem;cursor:pointer}
+
+/* HERO */
+#beranda{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;
+background:radial-gradient(circle at 20% 20%,rgba(225,29,46,.25),transparent 45%),radial-gradient(circle at 80% 80%,rgba(120,120,120,.2),transparent 45%),var(--black)}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.35;animation:float 9s ease-in-out infinite}
+.b1{width:280px;height:280px;background:var(--red);top:10%;left:-60px}
+.b2{width:240px;height:240px;background:#555;bottom:5%;right:-50px;animation-delay:2s}
+@keyframes float{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-40px) scale(1.15)}}
+.hero{position:relative;z-index:2;max-width:860px}
+.badge{display:inline-block;border:1px solid var(--red);color:var(--red2);padding:6px 18px;border-radius:50px;font-size:.85rem;margin-bottom:22px;animation:pulse 2.5s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(225,29,46,.6)}70%{box-shadow:0 0 0 14px rgba(225,29,46,0)}100%{box-shadow:0 0 0 0 rgba(225,29,46,0)}}
+.hero h1{font-size:clamp(2.4rem,7vw,4.6rem);font-weight:800;line-height:1.15}
+.shine{background:linear-gradient(90deg,var(--red),#fff,#888,var(--red));background-size:300% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shine 5s linear infinite}
+@keyframes shine{to{background-position:300% center}}
+.typing{font-size:clamp(1.1rem,3vw,1.7rem);margin:18px 0 12px;min-height:2.4rem;color:var(--gray2)}
+.typing span{color:var(--red2);font-weight:600}
+.cursor{display:inline-block;width:3px;height:1.2em;background:var(--red);margin-left:4px;vertical-align:middle;animation:blink .8s infinite}
+@keyframes blink{50%{opacity:0}}
+.desc{color:var(--gray2);max-width:600px;margin:0 auto 32px}
+.btn{display:inline-block;padding:13px 32px;border-radius:50px;font-weight:600;transition:.3s;margin:6px;border:2px solid var(--red);cursor:pointer;font-family:inherit;font-size:1rem}
+.btn.fill{background:var(--red);color:#fff}
+.btn.fill:hover{background:transparent;color:var(--red2);transform:translateY(-3px)}
+.btn.line{background:transparent;color:#fff}
+.btn.line:hover{background:var(--red);transform:translateY(-3px)}
+
+/* MARQUEE */
+.marquee{background:var(--red);overflow:hidden;white-space:nowrap;padding:14px 0;transform:rotate(-1.2deg);margin:-10px -20px;position:relative;z-index:3}
+.marquee div{display:inline-block;animation:run 25s linear infinite;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+.marquee span{margin:0 26px}
+@keyframes run{to{transform:translateX(-50%)}}
+
+/* ABOUT */
+#tentang{background:var(--dark)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;max-width:1100px;margin:auto}
+.about .box{background:linear-gradient(135deg,var(--gray),var(--black));border:1px solid var(--gray);border-left:5px solid var(--red);border-radius:18px;padding:40px;text-align:center}
+.about .box .emoji{font-size:5rem;animation:float 5s ease-in-out infinite;display:block}
+.about p{color:var(--gray2);margin-bottom:16px}
+.about h3{font-size:1.6rem;margin-bottom:14px}
+.about h3 span{color:var(--red)}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:22px;max-width:1000px;margin:60px auto 0}
+.stat{background:var(--black);border:1px solid var(--gray);border-radius:16px;padding:26px;text-align:center;transition:.3s}
+.stat:hover{border-color:var(--red);transform:translateY(-6px)}
+.stat b{font-size:2.6rem;color:var(--red);display:block;line-height:1.1}
+.stat small{color:var(--gray2)}
+
+/* TEAM */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:26px;max-width:1150px;margin:auto}
+.card{background:var(--dark);border:1px solid var(--gray);border-radius:18px;padding:30px 22px;text-align:center;transition:.4s;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(225,29,46,.22),transparent);opacity:0;transition:.4s}
+.card:hover{transform:translateY(-10px);border-color:var(--red);box-shadow:0 15px 35px rgba(225,29,46,.2)}
+.card:hover::before{opacity:1}
+.card>*{position:relative}
+.avatar{width:100px;height:100px;border-radius:50%;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:2.2rem;font-weight:800;background:linear-gradient(135deg,var(--red),#4b4b4b);border:3px solid var(--gray);transition:.4s}
+.card:hover .avatar{transform:rotate(360deg) scale(1.08)}
+.card h4{font-size:1.1rem}
+.role{color:var(--red2);font-size:.88rem;font-weight:600;margin-bottom:8px}
+.card p{color:var(--gray2);font-size:.88rem}
+
+/* PROJECT */
+#proyek{background:var(--dark)}
+.proj{background:var(--black);border:1px solid var(--gray);border-radius:18px;padding:32px;transition:.4s;border-bottom:4px solid var(--gray)}
+.proj:hover{border-bottom-color:var(--red);transform:translateY(-8px)}
+.proj .ic{font-size:2.6rem;margin-bottom:10px}
+.proj h4{margin-bottom:8px}
+.proj p{color:var(--gray2);font-size:.92rem;margin-bottom:14px}
+.tag{display:inline-block;background:var(--gray);color:var(--red2);font-size:.75rem;padding:3px 12px;border-radius:50px;margin:2px}
+
+/* CONTACT */
+.contact{max-width:620px;margin:auto;display:grid;gap:14px}
+.contact input,.contact textarea{width:100%;padding:14px 18px;border-radius:12px;border:1px solid var(--gray);background:var(--dark);color:#fff;font-family:inherit;font-size:.95rem;outline:none;transition:.3s}
+.contact input:focus,.contact textarea:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(225,29,46,.25)}
+.contact textarea{min-height:130px;resize:vertical}
+.info{text-align:center;color:var(--gray2);margin-top:26px}
+footer{background:#050505;text-align:center;padding:26px 8%;border-top:2px solid var(--red);color:var(--gray2);font-size:.9rem}
+footer span{color:var(--red)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(45px);transition:1s}
+.reveal.show{opacity:1;transform:none}
+
+@media(max-width:800px){
+.burger{display:block}
+.menu{position:absolute;top:100%;right:0;left:0;background:var(--black);flex-direction:column;align-items:center;gap:0;max-height:0;overflow:hidden;transition:.4s}
+.menu.open{max-height:380px;border-bottom:2px solid var(--red)}
+.menu li{padding:14px}
+.about{grid-template-columns:1fr}
+section{padding:80px 6%}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="bar" id="bar"></div>
+
+<nav id="nav">
+  <a href="#beranda" class="logo">KELOMPOK<span>4</span></a>
+  <button class="burger" id="burger" aria-label="Menu">&#9776;</button>
+  <ul class="menu" id="menu">
+    <li><a href="#beranda" class="active">Beranda</a></li>
+    <li><a href="#tentang">Tentang</a></li>
+    <li><a href="#tim">Tim</a></li>
+    <li><a href="#proyek">Proyek</a></li>
+    <li><a href="#kontak">Kontak</a></li>
+  </ul>
+</nav>
+
+<section id="beranda">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <div class="hero">
+    <div class="badge">🌾 Mahasiswa Agribisnis</div>
+    <h1>Portofolio <span class="shine">Kelompok 4</span></h1>
+    <div class="typing">Kami adalah <span id="typed"></span><i class="cursor"></i></div>
+    <p class="desc">Sekelompok mahasiswa Agribisnis yang mengumpulkan sebuah karya, ide, dan kerja sama empat orang yang percaya bahwa hasil terbaik lahir dari diskusi yang jujur dan proses yang rapi.</p>
+    <a href="#tim" class="btn fill">Kenali Tim Kami</a>
+    <a href="#proyek" class="btn line">Lihat Proyek</a>
+  </div>
+</section>
+
+<div class="marquee"><div id="mq"></div></div>
+
+<section id="tentang">
+  <h2 class="title reveal">Tentang <span>Kami</span></h2>
+  <p class="sub reveal">Mengenal lebih dekat tujuan dan semangat Kelompok 4.</p>
+  <div class="about">
+    <div class="box reveal"><span class="emoji">🌱</span><h3>Agribisnis <span>Masa Depan</span></h3></div>
+    <div class="reveal">
+      <h3>Dari Lahan Hingga <span>Pasar</span></h3>
+      <p>Kami adalah Kelompok 4 mahasiswa Program Studi Agribisnis. Kami mempelajari seluruh rantai pertanian, mulai dari produksi, pengolahan, pemasaran, hingga manajemen usaha.</p>
+      <p>Melalui website ini kami menampilkan kerja sama tim, tugas, dan proyek kami sebagai wujud komitmen untuk terus belajar dan berkontribusi bagi dunia pertanian.</p>
+    </div>
+  </div>
+  <div class="stats">
+    <div class="stat reveal"><b data-n="4">0</b><small>Anggota Tim </small></div>
+    <div class="stat reveal"><b data-n="3">0</b><small>Proyek Dikerjakan</small></div>
+    <div class="stat reveal"><b data-n="100" data-s="%">0</b><small>Semangat Belajar</small></div>
+    <div class="stat reveal"><b data-n="1">0</b><small>Tujuan Bersama</small></div>
+  </div>
+</section>
+
+<section id="tim">
+  <h2 class="title reveal">Anggota <span>Tim</span></h2>
+  <p class="sub reveal">Orang-orang hebat di balik Kelompok 4.</p>
+  <div class="grid">
+    <div class="card reveal"><div class="avatar">A</div><h4>Aisaturrahmi</h4><div class="role">Anggota 1</div>
+    <img src="foto aisa.jpeg" style="200px" width="200px" height="200px">
+    <div class="card reveal"><div class="avatar">B</div><h4>Amelia Ramadhani</h4><div class="role">Anggota 2</div>
+    <img src="foto lia.jpeg" style="200px" width="200px" height="200px">
+    <div class="card reveal"><div class="avatar">C</div><h4>Dewi Ratnasari</h4><div class="role">Anggota 3</div>
+    <img src="foto dewi.jpeg" style="200px" width="200px" height="200px">
+    <div class="card reveal"><div class="avatar">D</div><h4>Nisa Atria</h4><div class="role">Anggota 4</div><p>
+      <img src="foto nisa.jpeg" style="200px" width="200px" height="200px">
+
+  </div>
+</section>
+
+<section id="proyek">
+  <h2 class="title reveal">Proyek <span>Kami</span></h2>
+  <p class="sub reveal">Beberapa karya dan tugas yang telah kami kerjakan.</p>
+  <div class="grid">
+    <div class="proj reveal"><div class="ic">📊</div><h4>Analisis Usaha Tani</h4><p>Menghitung biaya, penerimaan, dan keuntungan usaha tani untuk menilai kelayakan usaha.</p><span class="tag">R/C Ratio</span><span class="tag">Analisis Biaya</span></div>
+    <div class="proj reveal"><div class="ic">🛒</div><h4>Pemasaran Hasil Pertanian</h4><p>Mengkaji saluran pemasaran dan strategi penjualan produk pertanian lokal.</p><span class="tag">Pemasaran</span><span class="tag">Rantai Pasok</span></div>
+    <div class="proj reveal"><div class="ic">♻️</div><h4>Inovasi Pertanian Berkelanjutan</h4><p>Gagasan pemanfaatan limbah pertanian menjadi produk bernilai tambah.</p><span class="tag">Inovasi</span><span class="tag">Berkelanjutan</span></div>
+  </div>
+</section>
+
+<section id="kontak">
+  <h2 class="title reveal">Hubungi <span>Kami</span></h2>
+  <p class="sub reveal">Punya pertanyaan, saran, atau ingin berkolaborasi? Kirim pesan kepada kami.</p>
+  <form class="contact reveal" id="form">
+    <input type="text" id="nm" placeholder="Kelompok 04" required>
+    <input type="email" id="em" placeholder="kelompokchannn@gmail.com" required>
+    <textarea id="ps" placeholder="Tulis pesan Anda..." required></textarea>
+    <button type="submit" class="btn fill">Kirim Pesan</button>
+  </form>
+  <p class="info">📧 emailkelompokchannn@gmail.com &nbsp;|&nbsp; 🎓 Program Studi Agribisnis</p>
+</section>
+
+<footer>&copy; <span id="yr"></span> <span>Kelompok 4</span> Agribisnis. Dibuat dengan semangat &amp; kerja sama tim.</footer>
+
+<script>
+// Teks mengetik
+var words=["Mahasiswa Agribisnis","Generasi Muda Pertanian","Tim yang Solid","Inovator Agribisnis"];
+var wi=0,ci=0,del=false,el=document.getElementById('typed');
+function type(){
+  var w=words[wi];
+  el.textContent=w.substring(0,ci);
+  if(!del&&ci<w.length){ci++;setTimeout(type,90);}
+  else if(!del){del=true;setTimeout(type,1400);}
+  else if(ci>0){ci--;setTimeout(type,45);}
+  else{del=false;wi=(wi+1)%words.length;setTimeout(type,300);}
+}
+type();
+
+// Teks berjalan (marquee)
+var items=["Agribisnis","Inovasi","Kerja Sama","Pertanian Maju","Kelompok 4","Semangat Belajar"];
+var row=items.map(function(t){return '<span>'+t+' ★</span>';}).join('');
+document.getElementById('mq').innerHTML=row+row+row+row;
+
+// Navbar, progress bar, menu aktif
+var nav=document.getElementById('nav'),bar=document.getElementById('bar');
+var links=document.querySelectorAll('.menu a'),secs=document.querySelectorAll('section');
+window.addEventListener('scroll',function(){
+  nav.classList.toggle('scrolled',window.scrollY>50);
+  var h=document.documentElement.scrollHeight-window.innerHeight;
+  bar.style.width=(window.scrollY/h*100)+'%';
+  var cur='beranda';
+  secs.forEach(function(s){if(window.scrollY>=s.offsetTop-150)cur=s.id;});
+  links.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+cur);});
+});
+
+// Menu mobile
+var menu=document.getElementById('menu');
+document.getElementById('burger').onclick=function(){menu.classList.toggle('open');};
+links.forEach(function(a){a.onclick=function(){menu.classList.remove('open');};});
+
+// Animasi muncul saat scroll + hitung angka
+function count(e){
+  var n=+e.dataset.n,s=e.dataset.s||'',c=0,step=Math.max(1,Math.ceil(n/60));
+  var t=setInterval(function(){c+=step;if(c>=n){c=n;clearInterval(t);}e.textContent=c+s;},30);
+}
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(x){
+    if(x.isIntersecting){
+      x.target.classList.add('show');
+      var b=x.target.querySelector('b[data-n]');
+      if(b&&!b.done){b.done=true;count(b);}
+      io.unobserve(x.target);
+    }
+  });
+},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});
+
+// Form kontak (membuka aplikasi email)
+document.getElementById('form').onsubmit=function(e){
+  e.preventDefault();
+  var n=document.getElementById('nm').value,m=document.getElementById('em').value,p=document.getElementById('ps').value;
+  var body='Nama: '+n+'\nEmail: '+m+'\n\n'+p;
+  window.location.href='mailto:emailkelompok4@gmail.com?subject='+encodeURIComponent('Pesan dari '+n)+'&body='+encodeURIComponent(body);
+};
+
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
